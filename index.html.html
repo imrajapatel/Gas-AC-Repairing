@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FixPro | Gas Stove, Chimney, Hob & AC Repair</title>
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: #1e2a3a;
+      background: #f9fbfd;
+      padding-bottom: 0;
+    }
+
+    /* Header & Navigation */
+    header {
+      background: #ffffff;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #0b3b5c;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .logo i {
+      color: #e67e22;
+      font-size: 2rem;
+    }
+
+    .logo span {
+      color: #e67e22;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      font-weight: 600;
+      color: #1e2a3a;
+      transition: color 0.2s;
+    }
+
+    nav ul li a:hover {
+      color: #e67e22;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #e67e22;
+      color: white;
+      padding: 0.65rem 1.6rem;
+      border-radius: 40px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.2s;
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    .btn:hover {
+      background: #cf6d1a;
+      transform: scale(1.02);
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 2px solid #e67e22;
+      color: #e67e22;
+    }
+
+    .btn-outline:hover {
+      background: #e67e22;
+      color: white;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(135deg, #eef5fb 0%, #ffffff 100%);
+      padding: 4rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+
+    .hero-content {
+      flex: 1 1 400px;
+    }
+
+    .hero-content h1 {
+      font-size: 3rem;
+      color: #0b3b5c;
+      line-height: 1.2;
+      margin-bottom: 1.2rem;
+    }
+
+    .hero-content h1 span {
+      color: #e67e22;
+    }
+
+    .hero-content p {
+      font-size: 1.2rem;
+      color: #3a4a5c;
+      margin-bottom: 2rem;
+      max-width: 600px;
+    }
+
+    .hero-image {
+      flex: 1 1 300px;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* Large Tools Icon Styling */
+    .hero-image i {
+      font-size: 15rem;
+      color: #0b3b5c;
+      opacity: 0.9;
+      background: rgba(230, 126, 34, 0.1);
+      padding: 4rem;
+      border-radius: 50%;
+      transition: transform 0.3s ease;
+    }
+
+    .hero-image i:hover {
+      transform: scale(1.05) rotate(-10deg);
+    }
+
+    /* Services Section */
+    .section-title {
+      text-align: center;
+      font-size: 2.5rem;
+      color: #0b3b5c;
+      margin-bottom: 1rem;
+    }
+
+    .section-sub {
+      text-align: center;
+      color: #5a6b7c;
+      max-width: 700px;
+      margin: 0 auto 3rem auto;
+      font-size: 1.15rem;
+    }
+
+    .services {
+      padding: 4rem 2rem;
+      background: #ffffff;
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .service-card {
+      background: #f9fbfd;
+      border-radius: 20px;
+      padding: 2rem 1.5rem;
+      text-align: center;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.02);
+      transition: 0.3s;
+      border: 1px solid #eef1f5;
+    }
+
+    .service-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 16px 30px rgba(0, 0, 0, 0.06);
+      border-color: #e67e22;
+    }
+
+    .service-card i {
+      font-size: 2.8rem;
+      color: #e67e22;
+      margin-bottom: 1.2rem;
+    }
+
+    .service-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 0.8rem;
+      color: #0b3b5c;
+    }
+
+    .service-card p {
+      color: #4a5a6b;
+      margin-bottom: 1.5rem;
+    }
+
+    .service-card .btn-outline {
+      padding: 0.4rem 1.4rem;
+      font-size: 0.9rem;
+    }
+
+    /* Why Choose Us */
+    .features {
+      background: #f0f6fc;
+      padding: 4rem 2rem;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .feature-item {
+      background: white;
+      border-radius: 16px;
+      padding: 2rem 1.5rem;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+    }
+
+    .feature-item i {
+      font-size: 2.2rem;
+      color: #e67e22;
+      margin-bottom: 1rem;
+    }
+
+    .feature-item h4 {
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+      color: #0b3b5c;
+    }
+
+    .feature-item p {
+      color: #4a5a6b;
+    }
+
+    /* Booking Form */
+    .booking {
+      padding: 4rem 2rem;
+      background: #ffffff;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .booking h2 {
+      text-align: center;
+      font-size: 2.2rem;
+      color: #0b3b5c;
+      margin-bottom: 0.8rem;
+    }
+
+    .booking > p {
+      text-align: center;
+      color: #5a6b7c;
+      margin-bottom: 2.5rem;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+
+    .full-width {
+      grid-column: span 2;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .form-group label {
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+      color: #1e2a3a;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      padding: 0.9rem 1rem;
+      border: 1px solid #d0dbe8;
+      border-radius: 12px;
+      font-size: 1rem;
+      font-family: inherit;
+      transition: 0.2s;
+      background: #f9fbfd;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: #e67e22;
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(230, 126, 34, 0.15);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    .booking .btn {
+      width: 100%;
+      padding: 1rem;
+      font-size: 1.15rem;
+      margin-top: 0.5rem;
+      border-radius: 14px;
+    }
+
+    /* Contact / Footer */
+    footer {
+      background: #0b3b5c;
+      color: #e1ecf5;
+      padding: 3rem 2rem 1.5rem 2rem;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 2.5rem;
+      max-width: 1200px;
+      margin: 0 auto 2rem auto;
+    }
+
+    .footer-col h4 {
+      font-size: 1.3rem;
+      margin-bottom: 1.2rem;
+      color: #ffffff;
+    }
+
+    .footer-col p, .footer-col a {
+      color: #b8cbd9;
+      text-decoration: none;
+      display: block;
+      margin-bottom: 0.6rem;
+      transition: 0.2s;
+    }
+
+    .footer-col a:hover {
+      color: #e67e22;
+    }
+
+    .footer-col i {
+      margin-right: 0.6rem;
+      color: #e67e22;
+    }
+
+    .copyright {
+      text-align: center;
+      border-top: 1px solid #1f4b6e;
+      padding-top: 1.5rem;
+      color: #9bb5c9;
+      font-size: 0.95rem;
+    }
+
+    /* Floating Call & WhatsApp Buttons */
+    .floating-buttons {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      z-index: 999;
+    }
+
+    .floating-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      color: white;
+      font-size: 1.8rem;
+      text-decoration: none;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+      transition: 0.25s ease;
+      position: relative;
+    }
+
+    .floating-btn:hover {
+      transform: scale(1.1);
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.3);
+    }
+
+    .floating-btn.call {
+      background: #e67e22;
+    }
+
+    .floating-btn.whatsapp {
+      background: #25D366;
+    }
+
+    .floating-btn .tooltip {
+      position: absolute;
+      right: 75px;
+      background: #1e2a3a;
+      color: white;
+      padding: 0.4rem 0.9rem;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      white-space: nowrap;
+      opacity: 0;
+      pointer-events: none;
+      transition: 0.2s;
+      font-weight: 600;
+    }
+
+    .floating-btn:hover .tooltip {
+      opacity: 1;
+      right: 70px;
+    }
+
+    /* Responsive */
+    @media (max-width: 700px) {
+      header {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      nav ul {
+        gap: 1.2rem;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .hero-content h1 {
+        font-size: 2.2rem;
+      }
+
+      .hero-image {
+        flex: 1 1 100%;
+      }
+      
+      .hero-image i {
+        font-size: 8rem;
+        padding: 2rem;
+      }
+
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .full-width {
+        grid-column: span 1;
+      }
+
+      .section-title {
+        font-size: 2rem;
+      }
+
+      .floating-buttons {
+        bottom: 1.2rem;
+        right: 1.2rem;
+        gap: 0.8rem;
+      }
+
+      .floating-btn {
+        width: 52px;
+        height: 52px;
+        font-size: 1.5rem;
+      }
+
+      .floating-btn .tooltip {
+        display: none;
+      }
+
+      footer {
+        padding-bottom: 5rem;
+      }
+    }
+
+    @media (max-width: 450px) {
+      .hero {
+        padding: 3rem 1rem;
+      }
+
+      .services, .features, .booking {
+        padding: 3rem 1rem;
+      }
+    }
+
+    /* Success message */
+    .success-msg {
+      display: none;
+      background: #d4edda;
+      color: #155724;
+      padding: 1rem;
+      border-radius: 12px;
+      margin-top: 1.5rem;
+      text-align: center;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="logo">
+      <i class="fas fa-tools"></i>
+      Fix<span>Pro</span>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#why-us">Why Us</a></li>
+        <li><a href="#book">Book Now</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <a href="#book" class="btn">Book Service</a>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Expert Repair for <span>Gas Stove, Chimney, Hob & AC</span></h1>
+      <p>Fast, reliable, and affordable doorstep repair services. Certified technicians, genuine spare parts, and a 30-day service warranty.</p>
+      <a href="#book" class="btn" style="margin-right: 0.8rem;">Book a Repair</a>
+      <a href="#services" class="btn btn-outline">Explore Services</a>
+    </div>
+    <!-- Tools Icon -->
+    <div class="hero-image">
+      <i class="fas fa-tools"></i>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="services">
+    <h2 class="section-title">Our Repair Services</h2>
+    <p class="section-sub">From kitchen appliances to cooling systems — we fix it all with precision and care.</p>
+    <div class="service-grid">
+      <div class="service-card">
+        <i class="fas fa-fire"></i>
+        <h3>Gas Stove Repair</h3>
+        <p>Ignition issues, gas leaks, burner problems, and full servicing for all brands.</p>
+        <a href="#book" class="btn btn-outline">Book Now</a>
+      </div>
+      <div class="service-card">
+        <i class="fas fa-smog"></i>
+        <h3>Chimney Service</h3>
+        <p>Deep cleaning, motor repair, suction issues, and installation for all chimney types.</p>
+        <a href="#book" class="btn btn-outline">Book Now</a>
+      </div>
+      <div class="service-card">
+        <i class="fas fa-utensils"></i>
+        <h3>Hob Repair</h3>
+        <p>Induction & ceramic hob repairs, touch panel issues, and heating element replacement.</p>
+        <a href="#book" class="btn btn-outline">Book Now</a>
+      </div>
+      <div class="service-card">
+        <i class="fas fa-snowflake"></i>
+        <h3>AC Repair</h3>
+        <p>Gas refilling, compressor repair, cooling coil cleaning, and annual maintenance.</p>
+        <a href="#book" class="btn btn-outline">Book Now</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us -->
+  <section id="why-us" class="features">
+    <h2 class="section-title">Why Choose FixPro?</h2>
+    <p class="section-sub">We combine expertise with convenience to give you the best repair experience.</p>
+    <div class="features-grid">
+      <div class="feature-item">
+        <i class="fas fa-clock"></i>
+        <h4>Same-Day Service</h4>
+        <p>Book before 2 PM and get a technician at your doorstep the same day.</p>
+      </div>
+      <div class="feature-item">
+        <i class="fas fa-certificate"></i>
+        <h4>Certified Experts</h4>
+        <p>All our technicians are background-verified and factory-trained.</p>
+      </div>
+      <div class="feature-item">
+        <i class="fas fa-shield-alt"></i>
+        <h4>30-Day Warranty</h4>
+        <p>We stand by our work with a free 30-day service warranty on repairs.</p>
+      </div>
+      <div class="feature-item">
+        <i class="fas fa-tags"></i>
+        <h4>Transparent Pricing</h4>
+        <p>No hidden charges. Get a fixed quote before any work begins.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Booking Form -->
+  <section id="book" class="booking">
+    <h2>Book Your Repair</h2>
+    <p>Fill in the details below and our team will call you within 15 minutes.</p>
+
+    <form id="bookingForm">
+      <div class="form-grid">
+        <div class="form-group">
+          <label for="name">Full Name *</label>
+          <input type="text" id="name" placeholder="e.g. Ramesh Kumar" required>
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone Number *</label>
+          <input type="tel" id="phone" placeholder="10-digit mobile number" required>
+        </div>
+        <div class="form-group full-width">
+          <label for="address">Full Address *</label>
+          <input type="text" id="address" placeholder="House no, street, area, city" required>
+        </div>
+        <div class="form-group">
+          <label for="service">Service Type *</label>
+          <select id="service" required>
+            <option value="">-- Select service --</option>
+            <option value="Gas Stove Repair">Gas Stove Repair</option>
+            <option value="Chimney Service">Chimney Service</option>
+            <option value="Hob Repair">Hob Repair</option>
+            <option value="AC Repair">AC Repair</option>
+            <option value="Other">Other / Not Sure</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="date">Preferred Date</label>
+          <input type="date" id="date">
+        </div>
+        <div class="form-group full-width">
+          <label for="notes">Additional Notes (optional)</label>
+          <textarea id="notes" placeholder="Describe the issue briefly..."></textarea>
+        </div>
+        <div class="form-group full-width">
+          <button type="submit" class="btn" id="submitBtn">Confirm Booking</button>
+        </div>
+      </div>
+      <div id="successMessage" class="success-msg">
+        <i class="fas fa-check-circle"></i> Thank you! Your service request has been received. Our team will contact you shortly.
+      </div>
+    </form>
+  </section>
+
+  <!-- Footer / Contact -->
+  <footer id="contact">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>FixPro</h4>
+        <p><i class="fas fa-map-marker-alt"></i> 123 Repair Street, Kitchen District, New Delhi - 110001</p>
+        <p><i class="fas fa-phone-alt"></i> +91 74002 53895</p>
+        <p><i class="fas fa-envelope"></i> support@fixpro.in</p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <a href="#services">Services</a>
+        <a href="#why-us">Why Choose Us</a>
+        <a href="#book">Book a Repair</a>
+        <a href="#">Privacy Policy</a>
+      </div>
+      <div class="footer-col">
+        <h4>Service Hours</h4>
+        <p>Mon – Sat: 8:00 AM – 8:00 PM</p>
+        <p>Sunday: 9:00 AM – 6:00 PM</p>
+        <p>Emergency: 24/7 (additional charge)</p>
+      </div>
+      <div class="footer-col">
+        <h4>Follow Us</h4>
+        <a href="#"><i class="fab fa-facebook"></i> Facebook</a>
+        <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
+        <a href="#"><i class="fab fa-twitter"></i> Twitter</a>
+        <a href="https://wa.me/917400253895" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+      </div>
+    </div>
+    <div class="copyright">
+      &copy; 2025 FixPro Repair Services. All rights reserved.
+    </div>
+  </footer>
+
+  <!-- Floating Call & WhatsApp Buttons -->
+  <div class="floating-buttons">
+    <!-- Changed icon to headset -->
+    <a href="tel:+917400253895" class="floating-btn call" aria-label="Call us">
+      <i class="fas fa-headset"></i>
+      <span class="tooltip">Call Support</span>
+    </a>
+    <a href="https://wa.me/917400253895?text=Hi%20FixPro%2C%20I%20need%20a%20repair%20service" 
+       class="floating-btn whatsapp" 
+       target="_blank" 
+       rel="noopener noreferrer"
+       aria-label="Chat on WhatsApp">
+      <i class="fab fa-whatsapp"></i>
+      <span class="tooltip">WhatsApp: 74002 53895</span>
+    </a>
+  </div>
+
+  <!-- Simple JavaScript for form handling -->
+  <script>
+    (function() {
+      const form = document.getElementById('bookingForm');
+      const successMsg = document.getElementById('successMessage');
+      const submitBtn = document.getElementById('submitBtn');
+
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        const phone = document.getElementById('phone').value.trim();
+        if (phone.length < 10) {
+          alert('Please enter a valid 10-digit phone number.');
+          return;
+        }
+
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Processing...';
+
+        setTimeout(() => {
+          successMsg.style.display = 'block';
+          form.reset();
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Confirm Booking';
+
+          setTimeout(() => {
+            successMsg.style.display = 'none';
+          }, 8000);
+        }, 800);
+
+        successMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      });
+
+      const dateInput = document.getElementById('date');
+      if (dateInput) {
+        const today = new Date().toISOString().split('T')[0];
+        dateInput.setAttribute('min', today);
+      }
+    })();
+  </script>
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+</body>
+</html>
